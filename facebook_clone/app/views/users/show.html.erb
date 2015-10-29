@@ -1,2 +1,13 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Posts</h1>
+
+<div>
+	<%= link_to "Posts", new_post_path %>
+</div>
+
+<p><strong>Name:</strong>
+	<%= @user.name %>
+</p>
+
+<%= image_tag @user.avatar.url %>
+<%= image_tag @user.avatar.url(:medium) %>
+<%= image_tag @user.avatar.url(:thumb) %>
