@@ -1,6 +1,11 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
 <h1>Listing Posts</h1>
+  <% @posts.each do |post| %>
+    <h2><%= link_to post.title, post_path(post) %></h2>
+    <p><%= post.content %></p>
+    <hr/>
+  <% end %>
 
 <table>
   <thead>

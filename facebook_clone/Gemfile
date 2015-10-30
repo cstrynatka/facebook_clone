@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#Added public_activity gem 
+gem 'public_activity'
 # Added Paperclip gem so users can add images or avatars
 gem 'paperclip', '~> 4.3'
 # Added Socialization gem for users to "like", "follow" or "mention"

@@ -1,12 +1,19 @@
-<h1>Posts</h1>
-
-<div>
-	<%= link_to "Posts", new_post_path %>
+<div class="right">
+	<% if user_signed_in? %>
+	<%= render 'shared/follow_form', user: @user %>
+	<% end %>
 </div>
 
-<p><strong>Name:</strong>
-	<%= @user.name %>
-</p>
+<%= image_tag @user.avatar.url(:thumb), class: 'profile' %>
+<span class="left">
+	<h4><%= @user.name %></h4>
+</span>
+
+<div class="row feed">
+	<% @activities.each do |activity| %>
+	<%= render_activity(activity) %>
+	<% end %>
+</div>
 
 <%= image_tag @user.avatar.url %>
 <%= image_tag @user.avatar.url(:medium) %>
